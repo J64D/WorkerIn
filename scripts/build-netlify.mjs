@@ -19,4 +19,4 @@ if (apiBaseUrl && !/^https:\/\//i.test(apiBaseUrl)) {
 }
 const config = `window.WORKERIN_CONFIG = Object.freeze({ apiBaseUrl: ${JSON.stringify(apiBaseUrl)} });\n`;
 await fs.writeFile(path.join(output, 'workerin-config.js'), config, 'utf8');
-console.log(`Netlify frontend built in dist/ (API ${apiBaseUrl ? 'configured' : 'not configured'}).`);
+console.log(`Frontend built in dist/ (API ${apiBaseUrl ? 'configured' : 'not configured'}).`);

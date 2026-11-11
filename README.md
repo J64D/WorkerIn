@@ -112,7 +112,7 @@ O projeto conta com uma arquitetura flexível que atende desde testes rápidos a
 
 ## 🌐 Publicação & Deploy
 
-- **Frontend:** Hospedado no [Netlify](https://workerin.netlify.app) através de deploy contínuo via GitHub.
+- **Frontend:** Hospedado no [Netlify](https://workerin.netlify.app) e no [Vercel](https://vercel.com) com detecção automática do `vercel.json` e build em `dist/`.
 - **Backend:** Preparado para deploy no [Render](https://render.com) (`render.yaml`), Railway ou VPS.
 - **Configurações de Banco de Dados:** Consulte o guia [SUPABASE_SETUP.md](SUPABASE_SETUP.md) para detalhes das migrations e variáveis de produção.
 - **Documentação de Endpoints:** Detalhes em [ARCHITECTURE.md](ARCHITECTURE.md).
