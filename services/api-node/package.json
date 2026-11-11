@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "build": "node ../../scripts/build-netlify.mjs",
     "dev": "node --watch src/entry-server.js",
     "start": "node src/entry-server.js",
     "demo": "node src/demo-server.js"
