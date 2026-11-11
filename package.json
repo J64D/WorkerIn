@@ -1,0 +1,16 @@
+{
+  "name": "workerin",
+  "private": true,
+  "version": "0.1.0",
+  "description": "WorkerIN web prototype and service workspace",
+  "scripts": {
+    "dev": "npm --prefix services/api-node run dev",
+    "start": "npm --prefix services/api-node start",
+    "build:netlify": "node scripts/build-netlify.mjs",
+    "check:api": "node --check services/api-node/src/server.js",
+    "check:demo": "node --check services/api-node/src/demo-server.js"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}

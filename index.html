@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#101012" />
+  <script>if(location.protocol==='file:'){location.replace('http://localhost:4173/')}else{try{if(sessionStorage.getItem('workerin_token'))document.documentElement.classList.add('has-workerin-session')}catch{}}</script>
+  <link rel="icon" type="image/svg+xml" href="assets/workerin-symbol.svg" />
+  <title>WorkerIN — conexões que fazem acontecer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <section class="welcome-screen" id="welcome-screen" aria-labelledby="welcome-title">
+    <div class="welcome-orbit orbit-one" aria-hidden="true"></div><div class="welcome-orbit orbit-two" aria-hidden="true"></div>
+    <div class="welcome-content">
+      <div class="welcome-logo-wrap"><img class="welcome-logo" src="assets/workerin-logo-dark.svg" alt="WorkerIN" /></div>
+      <span class="welcome-kicker"><i></i> TALENTO E OPORTUNIDADE, EM SINTONIA</span>
+      <h1 id="welcome-title">Seu próximo grande<br/><em>match profissional.</em></h1>
+      <p>Conecte empresas e profissionais de tecnologia que combinam de verdade.</p>
+      <div class="welcome-actions"><button class="welcome-primary" id="welcome-create">Criar minha conta <span>↗</span></button><button class="welcome-secondary" id="welcome-login">Já tenho uma conta</button></div>
+      <button class="welcome-explore" id="welcome-explore">Quero conhecer primeiro</button>
+      <div class="welcome-proof"><span class="welcome-proof-mark">W<span>IN</span></span><span>Gente boa. Projetos melhores.</span></div>
+    </div>
+    <div class="welcome-foot"><span>WORKERIN</span><span>CONEXÕES QUE FAZEM ACONTECER</span></div>
+  </section>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#inicio" aria-label="WorkerIN início"><img class="brand-mark" src="assets/workerin-symbol.svg" alt=""/><span>worker<span class="brand-in">IN</span></span></a>
+      <div class="side-label">MENU PRINCIPAL</div>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <button class="nav-item active" data-view="discover"><span class="nav-icon">◉</span>Descobrir <span class="nav-count">12</span></button>
+        <button class="nav-item" data-view="live"><span class="nav-icon live-icon">◉</span>Ao vivo <span class="live-dot"></span></button>
+        <button class="nav-item" data-view="matches"><span class="nav-icon">♡</span>Conexões <span class="nav-count muted-count" id="match-count">3</span></button>
+        <button class="nav-item" data-view="messages"><span class="nav-icon">▤</span>Mensagens <span class="message-pip"></span></button>
+      </nav>
+      <div class="side-label second-label">SUA CONTA</div>
+      <nav class="main-nav"><button class="nav-item" data-view="profile"><span class="nav-icon">◎</span>Meu perfil</button><button class="nav-item" id="settings-button"><span class="nav-icon">⚙</span>Preferências</button></nav>
+      <div class="sidebar-spacer"></div>
+      <div class="sidebar-promo"><div class="promo-spark">✳</div><strong>Seu próximo projeto<br>começa com um match.</strong><span>Encontre pessoas que fazem acontecer.</span><button id="promo-button">Explorar agora <span>↗</span></button></div>
+      <button class="account-card"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" alt="Foto de Gabriel"/><span class="account-text"><strong>Gabriel Martins</strong><small>Empresa verificada</small></span><span class="account-menu">···</span></button>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <div class="breadcrumbs"><span>Início</span><span class="crumb-slash">/</span><strong id="page-title">Descobrir talentos</strong></div>
+        <div class="top-actions"><button class="location-pill" id="location-button"><span class="pin-icon">⌖</span><span><small>LOCALIZAÇÃO</small><strong id="location-label">São Paulo, SP</strong></span><span class="chevron">⌄</span></button><button class="icon-button notification-button" id="notification-button" aria-label="Atividade e curtidas">♧<i></i></button><button class="top-avatar" aria-label="Meu perfil"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" alt=""/></button></div>
+      </header>
+
+      <section class="view active-view" id="discover-view">
+        <div class="welcome-row"><div><div class="eyebrow"><span class="eyebrow-line"></span>TERÇA-FEIRA, 27 DE OUTUBRO</div><h1>Explorar talentos</h1><p class="welcome-copy">Dê match com talentos para tirar seu próximo projeto do papel.</p></div><button class="filter-button" id="filter-open"><span>☷</span> Filtros <b id="filter-badge">2</b></button></div>
+        <div class="discovery-layout">
+          <div class="deck-column">
+            <div class="deck-meta"><span id="results-label">Talentos perto de você</span><span class="result-count"><i></i><b id="results-count">24</b> disponíveis</span></div>
+            <article class="talent-card" id="talent-card">
+              <div class="card-media" id="card-media">
+                <img id="talent-photo" src="" alt="" />
+                <video id="talent-video" muted loop playsinline preload="metadata" hidden aria-label="Vídeo de apresentação sem som"></video>
+                <div class="media-shade"></div>
+                <div class="photo-progress" id="photo-progress"></div>
+                <button class="media-next" id="media-next" aria-label="Ver próxima foto">›</button>
+                <div class="media-topline"><span class="verified-pill">✓ Perfil verificado</span><button class="more-button" aria-label="Mais opções">···</button></div>
+                <div class="video-badge" id="video-badge" hidden><span>▶</span> Apresentação sem som</div>
+                <div class="card-caption"><div class="name-line"><h2 id="talent-name"></h2><span class="verified-check">✓</span><span class="talent-age" id="talent-age"></span></div><div class="role-line" id="talent-role"></div><div class="skill-tags" id="skill-tags"></div></div>
+              </div>
+              <div class="card-details"><div class="details-top"><div class="location-info"><span class="mini-pin">⌖</span><span id="talent-location"></span><span class="distance-dot">·</span><strong id="talent-distance"></strong></div><div class="rate"><strong id="talent-rate"></strong><small>/ hora</small></div></div><p class="bio" id="talent-bio"></p><div class="work-chips" id="work-chips"></div><button class="portfolio-link" id="portfolio-button">Ver portfólio completo <span>↗</span></button></div>
+              <div class="card-actions"><button class="action-button pass-action" id="pass-button" aria-label="Passar">×</button><button class="action-button save-action" id="save-button" aria-label="Salvar perfil">☆</button><button class="action-button connect-action" id="connect-button"><span>♡</span> Tenho interesse</button></div>
+            </article>
+            <div class="deck-foot"><span>Arraste o cartão</span><span><kbd>←</kbd> passar</span><span><kbd>→</kbd> tenho interesse</span><span><kbd>↑</kbd> salvar</span></div>
+          </div>
+
+          <aside class="right-rail">
+            <div class="live-panel"><div class="panel-heading"><div><span class="live-overline"><i class="live-dot"></i> ACONTECENDO AGORA</span><h3>Ao vivo no WorkerIN</h3></div><button class="text-link" data-goto="live">Ver todas <span>↗</span></button></div><button class="live-feature" id="featured-live"><div class="live-cover"><img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=85" alt="Equipe trabalhando em uma live"/><span class="live-now"><i></i> AO VIVO</span><span class="viewers">◉ 128</span><span class="live-play">▶</span></div><div class="live-info"><div class="host-avatar-stack"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=80&q=80" alt=""/><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=80&q=80" alt=""/></div><div><strong>Portfolio review: do zero ao sim</strong><small>por <b>Marina Costa</b> e convidados</small></div></div></button><div class="live-tags"><span>UX/UI Design</span><span>30 min</span></div></div>
+            <div class="nearby-panel"><div class="panel-heading compact"><div><span class="live-overline">NO SEU RAIO</span><h3>Talentos próximos</h3></div><button class="round-arrow" id="nearby-more">↗</button></div><div class="nearby-list" id="nearby-list"></div></div>
+            <div class="tip-card"><span class="tip-icon">✳</span><div><strong>Seu projeto merece<br>o match certo.</strong><p>Conte o que você precisa e deixe o WorkerIN encontrar.</p><button id="post-project">Encontrar talentos <span>↗</span></button></div><div class="tip-art">w</div></div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="view" id="live-view"><div class="section-heading"><div><div class="eyebrow"><span class="live-dot"></span> CONEXÕES EM TEMPO REAL</div><h1>Ideias que <em>ganham vida.</em></h1><p>Lives, conversas e demonstrações de talento acontecendo agora.</p></div><div class="live-heading-actions"><button class="filter-button" id="live-category">☷ Categorias</button><button class="apply-button" id="start-live">Transmitir ao vivo <span>▶</span></button></div></div><div class="live-tabs"><button class="selected">Ao vivo <span id="live-count">0</span></button><button>Agendadas <span>0</span></button><button>Para você</button></div><div class="live-grid" id="live-grid"></div></section>
+      <section class="view" id="matches-view"><div class="section-heading"><div><div class="eyebrow"><span class="eyebrow-line"></span> SUAS CONEXÕES</div><h1>Um bom projeto<br><em>começa por aqui.</em></h1><p>Pessoas que demonstraram interesse mútuo com você.</p></div></div><div class="match-summary"><span class="match-heart">♡</span><div><strong id="match-summary-title">Suas conexões</strong><small>Converse com seus matches ou descubra quem curtiu e visitou seu perfil.</small></div></div><div class="activity-tabs"><button class="chosen" data-activity="matches">Conexões</button><button data-activity="likes">Curtidas recebidas <span>PRO</span></button><button data-activity="visits">Visitantes <span>PRO</span></button></div><div class="matches-grid" id="matches-grid"></div><div class="activity-content" id="activity-content" hidden></div></section>
+      <section class="view" id="messages-view"><div class="section-heading"><div><div class="eyebrow"><span class="eyebrow-line"></span> CAIXA DE ENTRADA</div><h1>Conversas que movem<br><em>projetos.</em></h1><p>O próximo passo para transformar conexão em colaboração.</p></div></div><div class="inbox"><div class="conversation-list"><div class="inbox-search">⌕ <input placeholder="Buscar conversas" /></div><div id="conversation-items"></div></div><div class="conversation-empty"><span class="empty-chat-icon">▤</span><strong>Escolha uma conversa</strong><p>Suas mensagens e oportunidades aparecem por aqui.</p></div></div></section>
+      <section class="view" id="profile-view"><div class="section-heading"><div><div class="eyebrow"><span class="eyebrow-line"></span> PERFIL DA EMPRESA</div><h1>Mostre seu próximo<br><em>grande desafio.</em></h1><p>Um perfil completo atrai talentos alinhados com a sua cultura.</p></div><button class="filter-button" id="edit-profile">✎ Editar perfil</button></div><div class="company-profile"><div class="company-cover"></div><div class="company-body"><img class="company-avatar" src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&w=180&q=85" alt="Logo da empresa"/><span class="verified-pill">✓ Empresa verificada</span><h2>WorkerIN Labs</h2><p>Conectamos grandes ideias a pessoas que fazem acontecer. Somos uma empresa de tecnologia em crescimento, com foco em produto digital e impacto real.</p><div class="profile-tags"><span>📍 São Paulo, SP</span><span>💻 Tecnologia</span><span>👥 11–50 pessoas</span></div></div></div><section id="plan-card" class="plan-card"></section></section>
+    </main>
+  </div>
+
+  <nav class="mobile-nav"><button class="selected" data-view="discover"><span>◉</span>Talentos</button><button data-view="live"><span class="mobile-live">◉</span>Ao vivo</button><button data-view="matches"><span>♡</span>Curtidas</button><button data-view="messages"><span>▤</span>Conversas</button><button data-view="profile"><span>◎</span>Perfil</button></nav>
+
+  <div class="modal-backdrop" id="filter-modal" aria-hidden="true"><section class="modal filter-modal"><div class="modal-head"><div><div class="eyebrow"><span class="eyebrow-line"></span> PERSONALIZE SUA BUSCA</div><h2>Filtros</h2></div><button class="modal-close" data-close>×</button></div><div class="modal-body"><label class="field-label">Área de atuação</label><div class="select-wrap"><select id="filter-area"><option value="Todas">Todas as áreas</option><option>Produto & UX/UI</option><option>Engenharia de software</option><option>Dados & IA</option><option>Marketing digital</option><option>Cloud & DevOps</option></select><span>⌄</span></div><label class="field-label filter-spaced-label">Quem você quer encontrar?</label><div class="option-pills" id="gender-options"><button class="chosen">Todas as pessoas</button><button>Mulheres</button><button>Homens</button></div><label class="field-label">Localização</label><div class="select-wrap"><select id="filter-city"><option value="Todas">Todas as cidades próximas</option><option value="São Paulo">São Paulo, SP</option><option value="Santo André">Santo André, SP</option></select><span>⌄</span></div><div class="filter-row"><div><label class="field-label">Raio de distância</label><strong class="range-value"><span id="distance-value">50</span> km</strong></div><input type="range" min="5" max="100" value="50" id="distance-range" /></div><div class="filter-row price-row"><div><label class="field-label">Valor por hora</label><strong class="range-value">Até R$ <span id="price-value">250</span></strong></div><input type="range" min="50" max="500" step="10" value="250" id="price-range" /></div><label class="field-label">Modelo de trabalho</label><div class="option-pills" id="work-options"><button class="chosen">Todos</button><button>Remoto</button><button>Híbrido</button><button>Presencial</button></div><label class="check-option"><input type="checkbox" id="available-only" checked/><span class="custom-check">✓</span><span><strong>Disponíveis para novos projetos</strong><small>Mostre apenas quem pode começar em breve</small></span></label></div><div class="modal-footer"><button class="reset-button" id="reset-filters">Limpar filtros</button><button class="apply-button" id="apply-filters">Ver talentos <span>↗</span></button></div></section></div>
+  <div class="modal-backdrop" id="profile-modal" aria-hidden="true"><section class="modal profile-modal"><button class="modal-close floating-close" data-close>×</button><div id="profile-modal-content"></div></section></div>
+  <div class="modal-backdrop" id="pro-modal" aria-hidden="true"><section class="modal auth-modal pro-modal"><div class="modal-head"><div><div class="eyebrow"><span class="eyebrow-line"></span> WORKERIN PRO</div><h2>Mais caminhos para se conectar.</h2></div><button class="modal-close" data-close aria-label="Fechar">×</button></div><p>Tenha acesso a quem visitou e curtiu seu perfil. Envie a primeira mensagem mesmo sem match.</p><div class="pro-price"><strong>R$ 7</strong><span>/ mês</span></div><ul><li>Veja todos os perfis que curtiram você</li><li>Descubra quem visitou seu perfil</li><li>Inicie conversas sem esperar um match</li></ul><p id="pro-checkout-note" class="live-consent-note">O plano Free continua com curtidas e conversas após match.</p><button class="apply-button auth-submit" id="pro-checkout">Assinar WorkerIN Pro</button></section></div>
+  <div class="modal-backdrop" id="video-modal" aria-hidden="true"><section class="modal video-modal"><button class="modal-close floating-close" data-close>×</button><div class="video-preview"><div class="video-glow">▶</div><span>VÍDEO DE APRESENTAÇÃO</span><strong>Em breve, uma nova forma de se apresentar.</strong><small>Perfis com vídeo recebem até 2× mais conexões.</small></div></section></div>
+  <div class="toast" id="toast"><span>✓</span><strong id="toast-message">Pronto!</strong></div>
+  <script src="workerin-config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+services:
+  - type: web
+    name: workerin-api
+    runtime: node
+    plan: free
+    region: ohio
+    buildCommand: npm ci --prefix services/api-node
+    startCommand: npm --prefix services/api-node start
+    healthCheckPath: /api/health/ready
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: "24"
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_PUBLISHABLE_KEY
+        sync: false
+      - key: SUPABASE_SECRET_KEY
+        sync: false
+      - key: SUPABASE_MEDIA_BUCKET
+        value: workerin-media
+      - key: JWT_SECRET
+        generateValue: true
+      - key: SERVICE_TOKEN
+        generateValue: true
+      - key: APP_BASE_URL
+        value: https://workerin.netlify.app
+      - key: AUTH_REDIRECT_URL
+        value: https://workerin.netlify.app
+      - key: ALLOWED_ORIGINS
+        value: https://workerin.netlify.app
+      - key: MERCADOPAGO_ACCESS_TOKEN
+        sync: false
+      - key: MERCADOPAGO_WEBHOOK_SECRET
+        sync: false
